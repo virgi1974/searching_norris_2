@@ -1,4 +1,3 @@
-
 <div class="container">
   <%= simple_form_for @search, url: searches_path, method: "POST", html: { class: '' } do |f| %>
     <div class="row">
@@ -12,19 +11,19 @@
         <%= f.input :email, input_html: {value: ""} %>  
       </div>
     </div>
-    <%= f.submit "Search (Random by default)", class: "btn btn-primary btn-block" %>
+    <%= f.submit t(:submit), class: "btn btn-primary btn-block" %>
   <% end %>
 </div>
 
 <hr>
 
-<h1>Searches</h1>
+<h1><%= t :searches %></h1>
 
 <table class="table table-bordered text-left">
   <tr class="thead-dark">
-    <th>Category</th>
-    <th>Text</th>
-    <th>Saying</th>
+    <th><%= t :categories %></th>
+    <th><%= t :text %></th>
+    <th><%= t :saying %></th>
   </tr>
   <% @searches.each do |search| %>
     <tr>

@@ -1,0 +1,13 @@
+es:
+  hello: "Hello world"
+  submit: "Buscar (modo random por defecto)"
+  searches: "Búsquedas"
+  categories: "Categorías"
+  text: "Texto buscado"
+  saying: "Chuck dice.."
+  simple_form:
+    labels:
+      search:
+        category: "Búsqueda por categorías"
+        text: "Búsqueda por Texto"
+        email: "Guardar Email"
