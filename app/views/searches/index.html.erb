@@ -1,0 +1,38 @@
+
+<div class="container">
+  <%= simple_form_for @search, url: searches_path, method: "POST", html: { class: '' } do |f| %>
+    <div class="row">
+      <div class="col-md-4">
+        <%= f.input :category, collection: SearchesController::CHUCK_CATEGORIES, input_html: {value: "", } %>  
+      </div>
+      <div class="col-md-4">
+        <%= f.input :text, input_html: {value: ""} %>  
+      </div>
+      <div class="col-md-4">
+        <%= f.input :email, input_html: {value: ""} %>  
+      </div>
+    </div>
+    <%= f.submit "Search (Random by default)", class: "btn btn-primary btn-block" %>
+  <% end %>
+</div>
+
+<hr>
+
+<h1>Searches</h1>
+
+<table class="table table-bordered text-left">
+  <tr class="thead-dark">
+    <th>Category</th>
+    <th>Text</th>
+    <th>Saying</th>
+  </tr>
+  <% @searches.each do |search| %>
+    <tr>
+      <td><%= search.category%></td>
+      <td><%=search.text %></td>
+      <td><%=search.data["value"] %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= will_paginate @searches %>
